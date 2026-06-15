@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "worldreset",
+  "version": "${version}",
+  "name": "worldreset",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/worldreset/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.tobs.worldreset.client.WorldresetDataGenerator"
+    ],
+    "main": [
+      "org.tobs.worldreset.Worldreset"
+    ]
+  },
+  "mixins": [
+    "worldreset.mixins.json",
+    {
+      "config": "worldreset.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
